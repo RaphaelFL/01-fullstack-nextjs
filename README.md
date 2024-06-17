@@ -1,12 +1,43 @@
-# Arquitetura base de Componentes Front End - [#01 NextJS FullStack]
+# 🚀 Portfólio
 
-...
-Saiba como traduzir um layout do Figma em componentes no Next.js
+Portfólio desenvolvido com NextJS, React.js e TypeScript.
 
-Conheça os benefícios de criar uma boa base de componentes para suas aplicações em Next.js
+## ℹ️ Sobre o projeto
 
-Entenda como estruturar os componentes de seu projeto e separar o visual feito pela equipe de design do código
+Este projeto consiste em mostrar meus recentes e futuros trabalhos realizados ao decorrer da minha carreira.
 
-Implemente uma aplicação do zero no Next.js utilizando o Typescript e styled-components
+## 🎯 Objetivo do projeto
 
-Descubra como criar componentes base e técnicas de código que melhoram o autocomplete do seu código Typescript
+Foi realizado este projeto com o intuito de aplicar os conhecimentos adquiridos com NextJS. Foi reforçado, também, os conhecimentos com TypeScript.
+
+## 📝 Tecnologias
+
+- [React.js](https://pt-br.reactjs.org)
+- [Next.js](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## ⚙️ Instalação
+
+Para que este rode em sua máquina, siga os passos abaixo:
+
+```bash
+# Clone o repositório em alguma pasta em sua máquina
+
+# Use node na versão 12.22.0
+nvm install 12.22.0
+node use 12.22.0
+
+# Entre no repositório
+$ cd portfolio
+
+Instale as dependências digitando no termimal:
+$ yarn install
+
+Rode a aplicação no modo de desenvolvimento.
+$ yarn dev
+
+Abra http://localhost:3000 no seu navegador para visualizar o projeto
+```
+
+## Licença
+Copyright © 2021 Raphael Figueira Lopes.
