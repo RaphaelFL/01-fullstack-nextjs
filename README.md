@@ -28,7 +28,7 @@ nvm install 12.22.0
 node use 12.22.0
 
 # Entre no repositório
-$ cd portfolio
+$ cd Portifolio-next-react-typescript
 
 Instale as dependências digitando no termimal:
 $ yarn install
