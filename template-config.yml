@@ -1,0 +1,9 @@
+site:
+  title: "Raphael Figueira Lopes - Timeline"
+  description: "Bem vindo minha timeline pessoal"
+personal:
+  name: "Raphael Figueira Lopes"
+  avatar: "https://github.com/RaphaelFL.png"
+  socialNetworks:
+    github: "https://github.com/RaphaelFL"
+    linkedin: "https://www.linkedin.com/in/raphael-figueira-lopes-bb528016a/"
