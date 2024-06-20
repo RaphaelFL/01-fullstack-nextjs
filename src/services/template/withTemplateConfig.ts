@@ -10,7 +10,9 @@ export interface TemplateConfig {
     name?: string;
     avatar?: string;
     socialNetworks?: {
+      youtube?: string;
       github?: string;
+      twitter?: string;
       linkedin?: string;
     };
   }

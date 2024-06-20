@@ -6,7 +6,9 @@ import Image from "@src/components/Image/Image";
 import Link from "@src/components/Link/Link";
 import Button from "@src/components/Button/Button";
 import { useTheme } from "@src/theme/ThemeProvider";
-import { useTemplateConfig } from '@src/service/template/TemplateConfigContext';
+import { useTemplateConfig } from "@src/services/template/TemplateConfigContext";
+import type { Post } from "@src/services/posts/PostsService";
+import { FeedPost } from "./patterns/FeedPost";
 
 interface FeedProps {
   children: React.ReactNode;
@@ -21,7 +23,7 @@ export default function Feed({ children }) {
         width: '100%',
         maxWidth: '683px',
         borderRadius: '8px',
-        paddingVertical: '40px',
+        paddingTop: '40px',
         paddingHorizontal: '32px',
       }}
     >
@@ -58,7 +60,7 @@ Feed.Header = () => {
             borderRadius: '100%',
           }}
           src={templateConfig?.personal?.avatar}
-          alt="Imagem de perfil do Mario Souto"
+          alt="Imagem de perfil do Raphael Figueira Lopes"
         />
 
         <Box
@@ -93,21 +95,20 @@ Feed.Header = () => {
           <Icon name="github" /> 
         </Link> */}
         {Object.keys(templateConfig.personal.socialNetworks).map(key => {
-        const socialNetwork = templateConfig.personal.socialNetworks[key];
-        if (socialNetwork) {
-          return (
-            <Link
-              key={key}
-              target="_blank"
-              href={templateConfig.personal.socialNetworks[key]}
-            >
-              <Icon name={key as any} />
-            </Link>
-          )
-        }
-        return null;
-      })}
-
+          const socialNetwork = templateConfig.personal.socialNetworks[key];
+          if (socialNetwork) {
+            return (
+              <Link
+                key={key}
+                target="_blank"
+                href={templateConfig.personal.socialNetworks[key]}
+              >
+                <Icon name={key as any} />
+              </Link>
+            )
+          }
+          return null;
+        })}
       </Box>
 
       {/* <Link href="https://youtube.com/DevSoutinho">
@@ -120,12 +121,29 @@ Feed.Header = () => {
   )
 }
 
-Feed.Posts = () => {
+interface FeedPostsProps {
+  posts: Post[];
+}
+Feed.Posts = ({ posts }: FeedPostsProps) => {
   return (
     <Box>
-      <Text>
-        Feed Posts
+      <Text variant="heading4" styleSheet={{ marginBottom: "27px" }}>
+        Últimas Atualizações
       </Text>
+      {posts.map(({ slug, title, metadata, image }) => {
+        const { date, excerpt, url, tags } = metadata;
+        return (
+          <FeedPost
+            key={slug}
+            title={title}
+            date={date}
+            excerpt={excerpt}
+            tags={tags}
+            url={url}
+            image={image}
+          />
+        )
+      })}
     </Box>
   )
 }
